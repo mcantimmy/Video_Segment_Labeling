@@ -1,17 +1,9 @@
 #!/bin/bash
 
-# Check if a filename was provided
+# Check if any files were provided
 if [ $# -eq 0 ]; then
-    echo "Error: Please provide a filename"
-    echo "Usage: ./push.sh <filename>"
-    exit 1
-fi
-
-FILENAME=$1
-
-# Check if the file exists
-if [ ! -f "$FILENAME" ]; then
-    echo "Error: $FILENAME not found"
+    echo "Error: Please provide at least one filename"
+    echo "Usage: ./push.sh <file1> [file2] [file3] ..."
     exit 1
 fi
 
@@ -21,15 +13,34 @@ if ! git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
     exit 1
 fi
 
-# Add the file
-git add "$FILENAME"
+# Check if all files exist before proceeding
+for FILE in "$@"; do
+    if [ ! -f "$FILE" ]; then
+        echo "Error: $FILE not found"
+        exit 1
+    fi
+done
+
+# Add all specified files
+echo "Adding files..."
+for FILE in "$@"; do
+    echo "  Adding $FILE"
+    git add "$FILE"
+done
 
 # Get the current branch name
 BRANCH=$(git symbolic-ref --short HEAD)
 
+# Create commit message based on number of files
+if [ $# -eq 1 ]; then
+    COMMIT_MSG="Update $1"
+else
+    COMMIT_MSG="Update multiple files: $*"
+fi
+
 # Commit with a message
 echo "Committing to branch: $BRANCH"
-git commit -m "Update $FILENAME"
+git commit -m "$COMMIT_MSG"
 
 # Push to the remote repository
 echo "Pushing to remote..."
