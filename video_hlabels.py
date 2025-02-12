@@ -198,7 +198,7 @@ def main():
     # Detect intro segments
     intro_segments = detector.find_intros(
         features_dict,
-        min_videos=2,
+        min_videos=3,
         probability_threshold=0.8
     )
     
