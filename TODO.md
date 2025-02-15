@@ -19,7 +19,7 @@
 - [ ] Add validation metrics for cluster quality
 
 ## Main Function
-- [ ] Add command line arguments for configuration
+- [x] Add command line arguments for configuration
 - [ ] Implement parallel processing for multiple videos
 - [ ] Add result serialization (JSON/CSV export)
 - [ ] Implement logging system
