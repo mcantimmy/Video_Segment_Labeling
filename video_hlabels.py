@@ -85,7 +85,7 @@ class IntroDetector:
     def find_intros(self, 
                     features_dict: Dict[str, np.ndarray],
                     min_videos: int = 2,
-                    probability_threshold: float = 0.8
+                    probability_threshold: float = 0.82
                     ) -> Dict[str, List[Tuple[int, int, float]]]:
         """
         Find intro segments across multiple videos
