@@ -20,7 +20,7 @@
 
 ## Main Function
 - [x] Add command line arguments for configuration
-- [ ] Implement parallel processing for multiple videos
+- [x] Implement parallel processing for multiple videos
 - [ ] Add result serialization (JSON/CSV export)
 - [ ] Implement logging system
 - [ ] Add video preview generation for detected segments
