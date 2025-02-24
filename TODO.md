@@ -22,7 +22,7 @@
 - [x] Add command line arguments for configuration
 - [x] Implement parallel processing for multiple videos
 - [ ] Add result serialization (JSON/CSV export)
-- [ ] Implement logging system
+- [x] Implement logging system
 - [ ] Add video preview generation for detected segments
 - [ ] Create progress tracking for batch processing
 - [ ] Add resume capability for interrupted processing
