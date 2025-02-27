@@ -23,8 +23,8 @@
 - [x] Implement parallel processing for multiple videos
 - [ ] Add result serialization (JSON/CSV export)
 - [x] Implement logging system
-- [ ] Add video preview generation for detected segments
-- [ ] Create progress tracking for batch processing
+- [x] Add video preview generation for detected segments
+- [x] Create progress tracking for batch processing
 - [ ] Add resume capability for interrupted processing
 
 ## General Improvements
